@@ -1,5 +1,6 @@
 FROM ubuntu
 RUN apt update
 RUN apt install nginx -y
-COPY index.html /var/www/html/
+COPY . /usr/share/nginx/html
+WORKDIR /usr/share/nginx/html
 CMD ["nginx", "-g", "daemon off;"]
